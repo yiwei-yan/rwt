@@ -1,9 +1,12 @@
-const path = require("path");
-const bundlePath = path.resolve(__dirname, "dist/");
-const tsImportPluginFactory = require('ts-import-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+import * as path from 'path';
+import * as webpack from 'webpack';
+import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 
-module.exports = {
+const tsImportPluginFactory = require('ts-import-plugin');
+const bundlePath = path.resolve(__dirname, "dist/");
+
+
+const BaseConfig: webpack.Configuration  = {
   entry: {
     bundle: "./src/index.tsx"
   },
@@ -14,6 +17,7 @@ module.exports = {
         loader: 'ts-loader',
         options: {
           transpileOnly: true,
+          experimentalWatchApi: true,
           getCustomTransformers: () => ({
             before: [tsImportPluginFactory({
               libraryName: 'antd',
@@ -106,3 +110,5 @@ module.exports = {
     })
   ]
 };
+
+export default BaseConfig;
