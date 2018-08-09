@@ -1,6 +1,6 @@
 import * as webpack from 'webpack';
 import * as merge from 'webpack-merge';
-import BaseConfig from './webpack.config'
+import BaseConfig from '../webpack.config'
 
 const config = merge(BaseConfig, {
     mode: 'development',

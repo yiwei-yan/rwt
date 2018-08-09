@@ -1,7 +1,7 @@
 import * as webpack from 'webpack';
 import * as CompressionWebpackPlugin from 'compression-webpack-plugin';
 import * as merge from 'webpack-merge';
-import BaseConfig from './webpack.config';
+import BaseConfig from '../webpack.config';
 
 const config = merge(BaseConfig, {
     mode: 'production',
