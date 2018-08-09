@@ -4,8 +4,8 @@
   "description": "{{description}}",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --config config/webpack.dev.config.js --open",
-    "build": "set NODE_ENV=production && webpack --config config/webpack.prod.config.js",
+    "start": "webpack-dev-server --config config/webpack.dev.config.ts --open",
+    "build": "set NODE_ENV=production && webpack --config config/webpack.prod.config.ts",
     "git": "git add . && git commit && git push"
   },
   "author": "{{author}}",
