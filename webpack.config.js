@@ -14,6 +14,7 @@ module.exports = {
         loader: 'ts-loader',
         options: {
           transpileOnly: true,
+          experimentalWatchApi: true,
           getCustomTransformers: () => ({
             before: [tsImportPluginFactory({
               libraryName: 'antd',
